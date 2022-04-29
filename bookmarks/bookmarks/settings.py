@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'account.apps.AccountConfig',
     'social_django',
+    'django_extensions',
 ]
 LOGIN_REDIRECT_URL = 'dashboard'
 
@@ -70,7 +71,14 @@ WSGI_APPLICATION = 'bookmarks.wsgi.application'
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'account.authentication.EmailAuthBackend',
+    'social_core.backends.facebook.FacebookOAuth2',
 ]
+
+SOCIAL_AUTH_FACEBOOK_KEY = '317684990506476'
+
+SOCIAL_AUTH_FACEBOOK_SECRET = '6a29bc87d635747525bbb70f4e459d5c'
+
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
